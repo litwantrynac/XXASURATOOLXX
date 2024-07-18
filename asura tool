@@ -1,0 +1,14 @@
+getgenv().keytoclick = "Q"
+
+local tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Asura"  -- Renaming the tool to "Asura"
+
+tool.Activated:Connect(function()
+    local vim = game:GetService("VirtualInputManager")
+    vim:SendKeyEvent(true, getgenv().keytoclick, false, game)  -- Use keytoclick for the key event
+    
+    print("Asura")  -- Print "Asura" to the output/console
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
